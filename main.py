@@ -1,0 +1,1 @@
+input("1. Visualize Sorts\n2. EXIT")

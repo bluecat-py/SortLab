@@ -1,21 +1,25 @@
 def bubble_sort(numbers):
-    steps = []
     for i in range(1, len(numbers)):
         for n in range(0, len(numbers)-i):
-
-            steps.append({
-                    "array": numbers[:],
-                    "compare": numbers[n:n+2],
-                    "swap": None
-            })
-
             if numbers[n] > numbers[n+1]:
-                steps[n]["swap"] = True
+                yield{
+                    "array": numbers,
+                    "compare": [n, n+1],
+                    "swap": False
+                }
                 numbers[n], numbers[n+1] = numbers[n+1], numbers[n]
+                yield{
+                    "array": numbers,
+                    "compare": [n, n+1],
+                    "swap": True
+                }
             else:
-                steps[n]["swap"] = False
-            steps.append(numbers[:])
-    return steps
+                yield{
+                    "array": numbers,
+                    "compare": [n, n+1],
+                    "swap": False
+                }
+
             
 def selection_sort(numbers):
     steps = [numbers[:]]
@@ -40,4 +44,5 @@ def insertion_sort(numbers):
 
 
 lst = [4, 7, 2, 5, 3, 1, 6]
-print(bubble_sort(lst))
+for array in bubble_sort(lst):
+    print(lst)

@@ -13,7 +13,7 @@ def user_chose_bubble(sort_input: str):
 def show_bubble(lst: list):
     for step in bubble_sort(lst):
         show_output(step)
-        time.sleep(0.6)
+        time.sleep(0.9)
 
 def show_output(step: dict):
     for i, num in enumerate(step["array"]):

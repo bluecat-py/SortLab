@@ -1,4 +1,4 @@
-def bubble_sort(numbers):
+def bubble_sort(numbers: list):
     bubbled: list[int] = []
     for i in range(1, len(numbers)):
         for n in range(0, len(numbers)-i):
@@ -58,6 +58,4 @@ def insertion_sort(numbers):
             steps.append(numbers[:])
     return steps
 
-
-lst = [4, 5, 2, 1, 7, 3, 6]
 

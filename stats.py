@@ -38,12 +38,21 @@ def convert_input(number_input: str):  #TODO: Convert user's input to the right 
         else:
             number_input = input("Input numbers! ").strip()
     return formatted_input
+
+
+def input_number():
+    num_lst = []
+    number = 1
+    num_lst.append(input(f"Input 7 digits of numbers to get started\nStarting from digit {number}: "))
+    for i in range (1,7):
+        number += 1
+        num_lst.append(input((f"Digit {number}: ")))
+    return num_lst
+
 #Suppose: number_input = 432 87
 #Problem: What if the user want to add Ten(10)?
 #TODO: Let's focus on making it work first, then we can give users the freedom to input their own 
 
-lst = [4, 5, 2, 1, 7, 3, 6]
-show_bubble(lst)
 
 
 
